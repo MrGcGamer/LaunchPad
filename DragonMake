@@ -1,0 +1,28 @@
+name: LaunchPad
+id: com.mrgcgamer.launchpad
+depends: mobilesubstrate
+architecture: iphoneos-arm
+version: 0.0.1
+description: To Infinity, And Beyond!
+author: MrGcGamer
+section: Tweaks
+
+all:
+  targetvers: 15.0
+  optim: "3"
+  cflags: "-flto"
+
+LaunchPad:
+  type: tweak
+  frameworks:
+    - Foundation
+  filter:
+    executables:
+      - SpringBoard
+  files:
+    - LaunchPad.mm
+
+Strip:
+  type: stage
+  stage:
+    - tweakStrip.sh
